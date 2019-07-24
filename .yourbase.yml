@@ -3,6 +3,7 @@ build_targets:
     environment:
       - RUN_TEST=all
       - CMAKE_EXTRA_OPTIONS=-D ENABLE_GENTENSOR=1
+      - CXX=g++
     container: 
       image: yourbase/yb_ubuntu:18.04
     commands:
