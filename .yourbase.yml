@@ -9,7 +9,7 @@ build_targets:
     commands:
       - add-apt-repository ppa:ubuntu-toolchain-r/test
       - apt -y update
-      - apt -y install gcc-8 g++-8 gfortran-8 libblas-dev liblapack-dev libtbb-dev cmake
+      - apt -y install gcc-8 g++-8 gfortran-8 libblas-dev liblapack-dev libtbb-dev cmake build-essential autoconf
       - bash ./ci/dep-linux.sh
       - bash ./ci/build-linux.sh
         
