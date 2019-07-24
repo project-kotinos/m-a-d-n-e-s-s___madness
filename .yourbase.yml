@@ -1,0 +1,20 @@
+build_targets:
+  - name: default
+    environment:
+      - RUN_TEST=all
+      - CMAKE_EXTRA_OPTIONS=-D ENABLE_GENTENSOR=1
+    container: 
+      image: yourbase/yb_ubuntu:18.04
+    commands:
+      - add-apt-repository ppa:ubuntu-toolchain-r/test
+      - add-apt-repository 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-7 main'
+      - apt -y update
+      - apt -y install gcc-8 g++-8 gfortran-8 libblas-dev liblapack-dev libtbb-dev
+      - bash ./ci/dep-linux.sh
+      - bash ./ci/build-linux.sh
+        
+ci:
+  build:
+    - name: default
+      build_target: default
+
