@@ -14,7 +14,7 @@ build_targets:
       - bash ./ci/build-linux.sh
         
 ci:
-  build:
+  builds:
     - name: default
       build_target: default
 
